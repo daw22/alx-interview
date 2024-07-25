@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from typing import List
-
+'''A module for working with Pascal's triangle.
+'''
 
 def pascal_triangle(n: int) -> List[list]:
     '''
