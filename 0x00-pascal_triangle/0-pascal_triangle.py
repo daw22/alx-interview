@@ -19,4 +19,4 @@ def pascal_triangle(n):
             elif i > 0 and j > 0:
                 line.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
         triangle.append(line)
-    return
+    return triangle
