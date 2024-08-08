@@ -25,7 +25,7 @@ def minOperations(n: int) -> int:
         return 0  # Already have one 'H'
 
     operations = 0
-    h_count = 1i
+    h_count = 1
     clipboard = 1
 
     while h_count < n:
