@@ -9,13 +9,19 @@ if (movieId) {
   request(url, function (error, response, body) {
     if (!error) {
       charactersUrls = JSON.parse(body).characters;
-      for (let i = 0; i < charactersUrls.length; i++) {
-        request(charactersUrls[i], function (error, response, body) {
-          if (!error) {
-            const name = JSON.parse(body).name;
-            console.log(name);
-          }
-        });
+      printNames(charactersUrls, 0);
+    }
+  });
+}
+
+function printNames (urls, idx) {
+  request(urls[idx], function (error, response, body) {
+    if (!error) {
+      const name = JSON.parse(body).name;
+      console.log(name);
+      idx += 1;
+      if (idx < urls.length) {
+        printNames(urls, idx);
       }
     }
   });
