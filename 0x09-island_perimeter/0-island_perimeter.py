@@ -15,13 +15,13 @@ def island_perimeter(grid):
             num = grid[i][j]
             if num == 1:
                 nums = []
-                if i > 0:
-                    nums.append(grid[i - 1][j])
                 if j > 0:
                     nums.append(grid[i][j - 1])
-                if i < len(grid[i]) - 1:
-                    nums.append(grid[i + 1][j])
-                if j < len(grid):
+                if i > 0:
+                    nums.append(grid[i - 1][j])
+                if j < len(grid[i]) - 1:
                     nums.append(grid[i][j + 1])
+                if i < len(grid) - 1:
+                    nums.append(grid[i + 1][j])
                 perimeter += 4 - sum(nums)
     return perimeter
